@@ -4,12 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos DOM</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="style02.css">
 </head>
 <body>
 
-    
-    
+    <input id="txtn1" type="number">
+    <span id="op"></span>
+    <input id="txtn1" type="number">
+    <span id="res">=</span>
+
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">x</button>
+    <button onclick="dividir()">/</button>
+
+    <script>
+        function somar() {
+            var txn1 = window.document.getElementById('txtn1')
+            var txn2 = window.document.getElementById('txtn2')
+
+            var n1= Number(txn1.value)
+            var n1 =  Number(txn2.value)
+
+            var soma = n1 + n2
+
+            var result = window.document.getElementById('res')
+
+            result.innerHTML = `=${soma}`
+
+
+        }
+    </script>
+
 </body>
 </html>
