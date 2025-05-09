@@ -10,29 +10,76 @@
 <body>
 
     <input id="txtn1" type="number">
-    <span id="op"></span>
-    <input id="txtn1" type="number">
+    <span id="op">.</span>
+    <input id="txtn2" type="number">
     <span id="res">=</span>
 
-    <button onclick="somar()">+</button>
-    <button onclick="subtrair()">-</button>
-    <button onclick="multiplicar()">x</button>
-    <button onclick="dividir()">/</button>
+    <div class="basic">
+        <button onclick="somar()">+</button>
+        <button onclick="subtrair()">-</button>
+        <button onclick="multiplicar()">x</button>
+        <button onclick="dividir()">/</button>
+    </div>
 
     <script>
+
+        
+        var tn1 = window.document.getElementById('txtn1')
+        var tn2 = window.document.getElementById('txtn2')
+
+        var ope = window.document.getElementById('op')
+
+        var result = window.document.getElementById('res')
+
         function somar() {
-            var txn1 = window.document.getElementById('txtn1')
-            var txn2 = window.document.getElementById('txtn2')
 
-            var n1= Number(txn1.value)
-            var n1 =  Number(txn2.value)
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
 
-            var soma = n1 + n2
+            soma = n1 + n2
 
-            var result = window.document.getElementById('res')
+            ope.innerHTML = '+'
 
-            result.innerHTML = `=${soma}`
+            result.innerHTML = `= ${soma}`
 
+        }
+
+        function subtrair() {
+
+            n1 = Number(tn1.value)
+            n2 = Number(tn2.value)
+
+            var subtraia = n1 - n2
+
+            ope.innerHTML = '-'
+
+            result.innerHTML = `= ${subtraia}`
+
+        }
+
+        function dividir() {
+
+            n1 = Number(tn1.value)
+            n2 = Number(tn2.value)
+
+            var divisao = n1 / n2
+
+            ope.innerHTML = '/'
+
+            result.innerHTML = `= ${divisao}`
+
+        }
+
+        function multiplicar() {
+
+            n1 = Number(tn1.value)
+            n2 = Number(tn2.value)
+
+            var multiplica = n1 * n2
+
+            ope.innerHTML = '+'
+
+            result.innerHTML = `= ${multiplica}`
 
         }
     </script>
