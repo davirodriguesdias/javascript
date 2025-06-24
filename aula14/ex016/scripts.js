@@ -3,21 +3,32 @@ var texto = document.getElementById('texto')
 
 function tabuada() {
 
-    var num = Number(numtxt.value)
-
     texto.innerHTML = ''
-    texto.style.backgroundColor = 'rgb(198, 255, 236)'
+    
 
-    if(num == '') {
-        texto.innerHTML = ('INFORME UM NÚMERO')
+    if(numtxt.value.length == 0) {
+        let item = document.createElement('option')
+        item.text = 'Erro, informe um número...'
+        texto.appendChild(item)
     }
 
     else {
-        for(var i = 0; i <= 10; i++) {
 
+        let num = Number(numtxt.value)
+        
 
-            res = num * i 
-            texto.innerHTML += (`${num} x ${i} = ${res}<br>`)
+        for(let i = 1; i <= 10; i++) {
+
+            let item = document.createElement('option')
+
+            // innerHTML = mexe com o html e o contéudo
+
+            // text = mexe diretamente com o conteúdo do elemnto, como o texto
+
+            item.text += `${num} x ${i} = ${num * i }`
+
+            texto.appendChild(item)
         }
     }
+
 }
