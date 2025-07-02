@@ -1,6 +1,8 @@
 let numtxt = document.getElementById('num')
 let res = document.getElementById('res')
 let nums = []
+let sel = document.getElementById('texto')
+let item = document.createElement('option')
 // let i = 0
 
 function lista() {
@@ -8,10 +10,9 @@ function lista() {
     let num = Number(numtxt.value)
     let pro = nums.indexOf(num)
         if(pro == -1 && num >=1 && num <= 100 && num !== '') {
-            let sel = document.getElementById('texto')
-                let item = document.createElement('option')
-                item.text = `O valor ${num} foi  adicionado`
-                sel.appendChild(item)
+            item.text = `O valor ${num} foi  adicionado`
+            sel.appendChild(item)
+
         
                 // if(num.value !== ''){
                 //     nums[i] = num.value
@@ -19,6 +20,7 @@ function lista() {
                 // }
         
                 nums.push(num)
+                
         } else {
             alert('Valor inválido ou já encontrado na lista!')
         }
